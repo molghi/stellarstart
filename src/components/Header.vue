@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
+import { RouterLink, useRoute } from "vue-router";
 import "@/assets/css/hamburgerMenu.css"; // hamburger menu styles
 
 const rootEl = ref(null); // component’s DOM root
@@ -7,12 +8,12 @@ const rootEl = ref(null); // component’s DOM root
 const siteName = "StellarStart";
 
 const menu = [
-    { title: "Home", path: "#" },
-    { title: "About us", path: "#" },
-    { title: "Features", path: "#" },
-    { title: "Pricing", path: "#" },
-    { title: "FAQ", path: "#" },
-    { title: "Blog", path: "#" },
+    { title: "Home", path: "/" },
+    { title: "About us", path: "/about" },
+    { title: "Features", path: "/features" },
+    { title: "Pricing", path: "/pricing" },
+    { title: "FAQ", path: "/faq" },
+    { title: "Blog", path: "/blog" },
 ];
 
 const button = { title: "Contact us", path: "#" };
@@ -23,6 +24,12 @@ const isHamburgerActive = ref(false);
 const toggleHamburger = () => {
     isMenuActive.value = !isMenuActive.value;
     isHamburgerActive.value = !isHamburgerActive.value;
+};
+
+// highlight active link
+const isActiveLink = (routePath) => {
+    const route = useRoute();
+    return route.path === routePath;
 };
 
 // check if the clicked element is not inside the component
@@ -49,10 +56,10 @@ onBeforeUnmount(() => document.removeEventListener("click", handleClickOutside))
                         <ul class="header__list">
                             <!-- Loop over 'menu' to generate items -->
                             <li v-for="(item, index) in menu" :key="index" class="header__list-item">
-                                <a
-                                    :href="item.path"
-                                    :class="`header__link ${item.title === 'Home' ? 'header__link--active' : ''}`"
-                                    >{{ item.title }}</a
+                                <RouterLink
+                                    :to="item.path"
+                                    :class="`header__link ${isActiveLink(item.path) ? 'header__link--active' : ''}`"
+                                    >{{ item.title }}</RouterLink
                                 >
                             </li>
                         </ul>
