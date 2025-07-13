@@ -1,67 +1,84 @@
 @import "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap";
 @import "https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap";
 
+/* ================================================================================= */
+
 .container {
     max-width: 1280px;
     margin: 0 auto;
     width: 100%;
 }
+
 @media (max-width: 1292px) {
     .container {
         max-width: 970px;
     }
 }
+
 @media (max-width: 992.98px) {
     .container {
         max-width: none;
         padding: 0 10px;
     }
 }
+
+/* ================================================================================= */
+
 .section-title {
     font-weight: 600;
     font-size: 48px;
     line-height: 64px;
 }
+
 .little-title {
     font-weight: 500;
     font-size: 18px;
     line-height: 32px;
 }
+
+/* ================================================================================= */
+
 .button {
     display: inline-block;
     font-family: inherit;
     color: inherit;
     font-size: 18px;
-    -webkit-transition: 0.3s ease 0s;
-    -o-transition: 0.3s ease 0s;
     transition: 0.3s ease 0s;
     border-radius: 41px;
     padding: 20px 0;
 }
+
 .button--yellow {
     background-color: #ffa52c;
 }
+
 .button--yellow:hover {
     background-color: #b58803;
 }
+
 @media (max-width: 1292px) {
     .button {
         font-size: 16px;
     }
 }
+
 .button--arrow {
     position: relative;
 }
+
 .button--arrow:after {
     content: "";
     position: absolute;
     top: 2px;
     right: 0;
-    background: url("../images/icons/proj-arrow.svg") 0 0 no-repeat;
+    background: url("@/assets/images/icons/proj-arrow.svg") 0 0 no-repeat;
     background-size: contain;
     width: 24px;
     height: 12px;
 }
+
+/* ================================================================================= */
+
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
     font-family: inherit;
@@ -125,19 +142,18 @@ textarea {
 }
 select {
     background-color: #fff;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     font-family: inherit;
     font-size: inherit;
     color: inherit;
 }
+
+/* ================================================================================= */
+
 .logo {
     display: inline-block;
     font-size: 26px;
     font-weight: bold;
-    -webkit-transition: all 0.3s;
-    -o-transition: all 0.3s;
     transition: all 0.3s;
 }
 .logo:hover {

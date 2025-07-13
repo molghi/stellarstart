@@ -7,7 +7,6 @@
 *,
 *:before,
 *:after {
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 :focus,
@@ -40,9 +39,6 @@ body {
     line-height: 1;
     font-size: 16px;
     font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    -ms-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
 }
 body.lock {
     overflow: hidden;
