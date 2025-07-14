@@ -1,10 +1,15 @@
 <script setup>
-const content = {
-    bigTitle: "Building stellar websites for early startups",
-    subtitle: "We craft fast, scalable, and elegant websites tailored for startups aiming to make a bold first impression",
-    button1: "View our work",
-    button2: "View pricing",
-};
+import { defineProps } from "vue";
+
+defineProps({
+    bigTitle: { type: String, required: true },
+    subtitle: { type: String, required: true },
+    button1: { type: String, required: true },
+    button1Link: { type: String, required: true },
+    button2: { type: String, required: false },
+    button2Link: { type: String, required: false },
+    image: { type: String, required: true },
+});
 </script>
 
 <template>
@@ -12,17 +17,17 @@ const content = {
         <div class="container">
             <div class="hero__wrapper">
                 <div class="hero__body">
-                    <h1 class="hero__title">{{ content.bigTitle }}</h1>
+                    <h1 class="hero__title">{{ bigTitle }}</h1>
                     <div class="hero__text">
-                        {{ content.subtitle }}
+                        {{ subtitle }}
                     </div>
                     <div class="hero__buttons">
-                        <a href="#" class="hero__button button button--yellow">{{ content.button1 }}</a>
-                        <a href="#" class="hero__button button--arrow">{{ content.button2 }}</a>
+                        <a :href="button1Link" class="hero__button button button--yellow">{{ button1 }}</a>
+                        <a v-if="button2" :href="button2Link" class="hero__button button--arrow">{{ button2 }}</a>
                     </div>
                 </div>
                 <div class="hero__pic">
-                    <img src="@/assets/images/content/hero.png" alt="" />
+                    <img :src="image" alt="hero image" />
                 </div>
             </div>
         </div>
@@ -73,14 +78,14 @@ const content = {
     margin-right: 40px;
 }
 
-.hero__button:last-child {
+.hero__button:nth-child(2) {
     color: #fff;
     position: relative;
     z-index: 0;
     padding-right: 40px;
 }
 
-.hero__button:last-child:hover {
+.hero__button:nth-child(2):hover {
     text-decoration: underline;
 }
 

@@ -1,4 +1,5 @@
 <script setup>
+import { defineProps } from "vue";
 import icon1 from "@/assets/images/icons/benefit-1.svg";
 import logo1 from "@/assets/images/content/partner-logo-1.svg";
 import logo2 from "@/assets/images/content/partner-logo-2.svg";
@@ -31,12 +32,18 @@ const content = {
     bottomSubtitle: "Active Users",
     bottomLogos: [logo1, logo2, logo3, logo4, logo5],
 };
+defineProps({
+    order: {
+        type: String,
+        default: "regular",
+    },
+});
 </script>
 
 <template>
     <section class="about-benefits">
         <div class="container">
-            <div class="about-benefits__wrapper">
+            <div :class="`about-benefits__wrapper ${order === 'reversed' ? 'reversed' : ''}`">
                 <div class="about-benefits__title section-title">{{ content.title }}</div>
                 <div class="about-benefits__items">
                     <div v-for="(item, index) in content.cards" :key="index" class="about-benefits__item">
@@ -122,6 +129,23 @@ const content = {
     font-weight: 400;
     font-size: 16px;
     color: rgba(40, 41, 56, 0.7);
+}
+
+.reversed {
+    display: flex;
+    flex-direction: column;
+    margin-top: 90px;
+}
+.reversed .about-benefits__title {
+    order: 2;
+}
+.reversed .about-benefits__items {
+    order: 3;
+    margin-bottom: 0;
+}
+.reversed .about-benefits__bottom {
+    order: 1;
+    margin-bottom: 90px;
 }
 
 /* RESPONSIVE DESIGN */
