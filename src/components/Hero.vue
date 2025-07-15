@@ -151,5 +151,9 @@ defineProps({
     .hero__button.button--arrow {
         padding-right: 0;
     }
+
+    .hero .button--arrow {
+        padding-right: 40px;
+    }
 }
 </style>

@@ -7,6 +7,7 @@ import Testimonials from "@/components/Testimonials.vue";
 import Faq from "@/components/Faq.vue";
 import Inquiry from "@/components/Inquiry.vue";
 import Blog from "@/components/Blog.vue";
+
 import img from "@/assets/images/content/hero.png";
 import img1 from "@/assets/images/content/blog-1.jpg";
 import img2 from "@/assets/images/content/blog-2.jpg";
