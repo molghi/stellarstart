@@ -1,7 +1,7 @@
 <script setup>
-import img1 from "@/assets/images/content/projects-1.jpg";
-import img2 from "@/assets/images/content/projects-2.jpg";
-import img3 from "@/assets/images/content/projects-3.jpg";
+import img1 from "/images/content/projects-1.jpg";
+import img2 from "/images/content/projects-2.jpg";
+import img3 from "/images/content/projects-3.jpg";
 
 const content = {
     title: "View our projects",
@@ -92,7 +92,7 @@ const content = {
 }
 
 .projects__link:after {
-    background: url("@/assets/images/icons/proj-arrow-dark.svg") 0 0 no-repeat;
+    background: url("/images/icons/proj-arrow-dark.svg") 0 0 no-repeat;
     background-size: contain;
 }
 
@@ -180,7 +180,7 @@ const content = {
 
 .projects__card-button:after {
     top: 5px;
-    background: url("@/assets/images/icons/proj-arrow-yellow.svg") 0 0 no-repeat;
+    background: url("/images/icons/proj-arrow-yellow.svg") 0 0 no-repeat;
     background-size: contain;
 }
 

@@ -1,5 +1,5 @@
 <script setup>
-import img from "@/assets/images/content/about-hero.jpg";
+import img from "/images/content/about-hero.jpg";
 const content = {
     title: "About us",
     subtitle: "Our designs solve problems",

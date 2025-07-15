@@ -212,7 +212,7 @@ const content = {
     position: absolute;
     top: 0;
     left: 0;
-    background: url("@/assets/images/icons/pricing-thing.svg") 0 0 no-repeat;
+    background: url("/images/icons/pricing-thing.svg") 0 0 no-repeat;
     background-size: contain;
     width: 26px;
     height: 18px;

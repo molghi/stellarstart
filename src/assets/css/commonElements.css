@@ -71,7 +71,7 @@
     position: absolute;
     top: 2px;
     right: 0;
-    background: url("@/assets/images/icons/proj-arrow.svg") 0 0 no-repeat;
+    background: url("/images/icons/proj-arrow.svg") 0 0 no-repeat;
     background-size: contain;
     width: 24px;
     height: 12px;

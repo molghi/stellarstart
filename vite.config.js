@@ -6,6 +6,7 @@ import vue from "@vitejs/plugin-vue";
 
 // https://vite.dev/config/
 export default defineConfig({
+    base: "/stellarstart/", // trailing slash required
     build: {
         assetsInlineLimit: 0, // forces images to be copied, not inlined
     },

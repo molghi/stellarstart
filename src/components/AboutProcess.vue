@@ -68,7 +68,7 @@ const content = {
     position: absolute;
     top: 9px;
     left: 48px;
-    background: url("@/assets/images/icons/line.svg") 0 0 / cover no-repeat;
+    background: url("/images/icons/line.svg") 0 0 / cover no-repeat;
     width: 100%;
     height: 4px;
 }

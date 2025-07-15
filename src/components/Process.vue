@@ -1,8 +1,8 @@
 <script setup>
-import img1 from "@/assets/images/icons/process-1.svg";
-import img2 from "@/assets/images/icons/process-2.svg";
-import img3 from "@/assets/images/icons/process-3.svg";
-import img4 from "@/assets/images/icons/process-4.svg";
+import img1 from "/images/icons/process-1.svg";
+import img2 from "/images/icons/process-2.svg";
+import img3 from "/images/icons/process-3.svg";
+import img4 from "/images/icons/process-4.svg";
 
 const content = {
     title: "How We Work",
@@ -103,7 +103,7 @@ const content = {
 
 .process__link:after {
     top: 7px;
-    background: url("@/assets/images/icons/proj-arrow-purple.svg") 0 0 no-repeat;
+    background: url("/images/icons/proj-arrow-purple.svg") 0 0 no-repeat;
     background-size: contain;
 }
 

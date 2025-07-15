@@ -46,7 +46,7 @@ const toggleFaqItem = (index) => (activeIndex.value = activeIndex.value === inde
                             <div class="faq__item-number">0{{ index + 1 }}</div>
                             <div class="faq__item-name">{{ item.question }}</div>
                             <button :class="`faq__item-button ${activeIndex === index ? 'active' : ''}`">
-                                <img src="@/assets/images/icons/plus.svg" alt="plus icon" />
+                                <img src="/images/icons/plus.svg" alt="plus icon" />
                             </button>
                         </div>
                         <div :class="`faq__item-content ${activeIndex === index ? 'active' : ''}`" v-if="activeIndex === index">

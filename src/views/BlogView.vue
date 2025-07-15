@@ -5,12 +5,12 @@ import Blog from "@/components/Blog.vue";
 import { onMounted } from "vue";
 onMounted(() => (document.title = "Blog | StellarStart"));
 
-import img1 from "@/assets/images/content/blog-1.jpg";
-import img2 from "@/assets/images/content/blog-2.jpg";
-import img3 from "@/assets/images/content/blog-3.jpg";
-import img4 from "@/assets/images/content/blog-4.jpg";
-import img5 from "@/assets/images/content/blog-5.jpg";
-import img6 from "@/assets/images/content/blog-6.jpg";
+import img1 from "/images/content/blog-1.jpg";
+import img2 from "/images/content/blog-2.jpg";
+import img3 from "/images/content/blog-3.jpg";
+import img4 from "/images/content/blog-4.jpg";
+import img5 from "/images/content/blog-5.jpg";
+import img6 from "/images/content/blog-6.jpg";
 
 const blogsData = [
     {

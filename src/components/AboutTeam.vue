@@ -1,11 +1,11 @@
 <script setup>
-import img1 from "@/assets/images/content/member-1.png";
-import img2 from "@/assets/images/content/member-2.png";
-import img3 from "@/assets/images/content/member-3.png";
-import img4 from "@/assets/images/content/member-4.png";
-import iconFb from "@/assets/images/icons/fb.svg";
-import iconTwi from "@/assets/images/icons/twi.svg";
-import iconIn from "@/assets/images/icons/in.svg";
+import img1 from "/images/content/member-1.png";
+import img2 from "/images/content/member-2.png";
+import img3 from "/images/content/member-3.png";
+import img4 from "/images/content/member-4.png";
+import iconFb from "/images/icons/fb.svg";
+import iconTwi from "/images/icons/twi.svg";
+import iconIn from "/images/icons/in.svg";
 
 const content = {
     title: "Meet Our Team",

@@ -1,9 +1,9 @@
 <script setup>
 import { RouterLink } from "vue-router";
-import img1 from "@/assets/images/content/work-1.jpg";
-import img2 from "@/assets/images/content/work-2.jpg";
-import img3 from "@/assets/images/content/work-3.jpg";
-import img4 from "@/assets/images/content/work-4.jpg";
+import img1 from "/images/content/work-1.jpg";
+import img2 from "/images/content/work-2.jpg";
+import img3 from "/images/content/work-3.jpg";
+import img4 from "/images/content/work-4.jpg";
 
 import { ref } from "vue";
 const activeTab = ref("all");
@@ -201,7 +201,7 @@ const content = {
     position: absolute;
     top: 5px;
     right: 0;
-    background: url("@/assets/images/icons/proj-arrow-dark.svg") 0 0 no-repeat;
+    background: url("/images/icons/proj-arrow-dark.svg") 0 0 no-repeat;
     background-size: contain;
     width: 24px;
     height: 12px;

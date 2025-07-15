@@ -1,6 +1,6 @@
 <script setup>
-import img from "@/assets/images/content/studies-top.jpg";
-import img2 from "@/assets/images/content/studies.jpg";
+import img from "/images/content/studies-top.jpg";
+import img2 from "/images/content/studies.jpg";
 const content = {
     smallTitle: "Web Design And Development",
     title: "Finsweet Design case studies",

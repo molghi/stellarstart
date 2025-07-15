@@ -124,7 +124,7 @@ defineProps({
 
 .blog__card-button:after {
     top: 8px;
-    background: url("@/assets/images/icons/proj-arrow-dark.svg") 0 0 no-repeat;
+    background: url("/images/icons/proj-arrow-dark.svg") 0 0 no-repeat;
     background-size: contain;
 }
 

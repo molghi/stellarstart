@@ -1,6 +1,6 @@
 <script setup>
-import img1 from "@/assets/images/content/about-mission-1.jpg";
-import img2 from "@/assets/images/content/about-mission-2.jpg";
+import img1 from "/images/content/about-mission-1.jpg";
+import img2 from "/images/content/about-mission-2.jpg";
 const content = {
     cards: [
         {

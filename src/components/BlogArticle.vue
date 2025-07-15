@@ -1,6 +1,6 @@
 <script setup>
-import img from "@/assets/images/content/blog-big.jpg";
-import img2 from "@/assets/images/content/blog.jpg";
+import img from "/images/content/blog-big.jpg";
+import img2 from "/images/content/blog.jpg";
 
 const content = {
     title: "A UX Case Study on Creating a Studious Environment for Students",

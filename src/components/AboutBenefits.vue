@@ -1,11 +1,11 @@
 <script setup>
 import { defineProps } from "vue";
-import icon1 from "@/assets/images/icons/benefit-1.svg";
-import logo1 from "@/assets/images/content/partner-logo-1.svg";
-import logo2 from "@/assets/images/content/partner-logo-2.svg";
-import logo3 from "@/assets/images/content/partner-logo-3.svg";
-import logo4 from "@/assets/images/content/partner-logo-4.svg";
-import logo5 from "@/assets/images/content/partner-logo-5.svg";
+import icon1 from "/images/icons/benefit-1.svg";
+import logo1 from "/images/content/partner-logo-1.svg";
+import logo2 from "/images/content/partner-logo-2.svg";
+import logo3 from "/images/content/partner-logo-3.svg";
+import logo4 from "/images/content/partner-logo-4.svg";
+import logo5 from "/images/content/partner-logo-5.svg";
 const content = {
     title: "The benefits of working with us",
     cards: [

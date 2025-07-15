@@ -1,5 +1,5 @@
 <script setup>
-import image from "@/assets/images/content/about-info.jpg";
+import image from "/images/content/about-info.jpg";
 const content = {
     title: "Who We Are",
     cards: [

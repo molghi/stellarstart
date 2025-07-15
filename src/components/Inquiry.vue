@@ -57,7 +57,7 @@ const content = {
 .inquiry__body {
     flex: 1 1 50%;
     min-height: 691px;
-    background: url("@/assets/images/content/inquiry.jpg") 0 0 / cover no-repeat;
+    background: url("/images/content/inquiry.jpg") 0 0 / cover no-repeat;
     padding: 95px;
 }
 

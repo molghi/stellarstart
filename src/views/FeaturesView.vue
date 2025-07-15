@@ -1,13 +1,13 @@
 <script setup>
 import Hero from "@/components/Hero.vue";
 import Faq from "@/components/Faq.vue";
-import img from "@/assets/images/content/feature.png";
+import img from "/images/content/feature.png";
 import AboutBenefits from "@/components/AboutBenefits.vue";
 import Feature from "@/components/Feature.vue";
-import featuresImg1 from "@/assets/images/content/features-1.jpg";
-import featuresImg2 from "@/assets/images/content/features-2.jpg";
-import featuresImg3 from "@/assets/images/content/features-3.jpg";
-import featuresImg4 from "@/assets/images/content/features-4.jpg";
+import featuresImg1 from "/images/content/features-1.jpg";
+import featuresImg2 from "/images/content/features-2.jpg";
+import featuresImg3 from "/images/content/features-3.jpg";
+import featuresImg4 from "/images/content/features-4.jpg";
 import { onMounted } from "vue";
 onMounted(() => (document.title = "Features | StellarStart"));
 </script>

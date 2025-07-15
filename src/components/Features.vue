@@ -1,10 +1,10 @@
 <script setup>
-import img1 from "@/assets/images/icons/group.svg";
-import img2 from "@/assets/images/icons/feat-2.svg";
-import img3 from "@/assets/images/icons/feat-3.svg";
-import img4 from "@/assets/images/icons/feat-4.svg";
-import img5 from "@/assets/images/icons/feat-5.svg";
-import img6 from "@/assets/images/icons/feat-6.svg";
+import img1 from "/images/icons/group.svg";
+import img2 from "/images/icons/feat-2.svg";
+import img3 from "/images/icons/feat-3.svg";
+import img4 from "/images/icons/feat-4.svg";
+import img5 from "/images/icons/feat-5.svg";
+import img6 from "/images/icons/feat-6.svg";
 
 const content = {
     title: "Features",

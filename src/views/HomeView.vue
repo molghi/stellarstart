@@ -8,10 +8,10 @@ import Faq from "@/components/Faq.vue";
 import Inquiry from "@/components/Inquiry.vue";
 import Blog from "@/components/Blog.vue";
 
-import img from "@/assets/images/content/hero.png";
-import img1 from "@/assets/images/content/blog-1.jpg";
-import img2 from "@/assets/images/content/blog-2.jpg";
-import img3 from "@/assets/images/content/blog-3.jpg";
+import img from "/images/content/hero.png";
+import img1 from "/images/content/blog-1.jpg";
+import img2 from "/images/content/blog-2.jpg";
+import img3 from "/images/content/blog-3.jpg";
 
 import { onMounted } from "vue";
 onMounted(() => (document.title = "StellarStart | Building stellar websites for early startups"));
@@ -53,7 +53,7 @@ const blogsData = [
         button1Link="#"
         button2="View pricing"
         button2Link="#"
-        :image="img"
+        image="/stellarstart/images/content/hero.png"
     />
     <Process />
     <Projects />

@@ -1,8 +1,8 @@
 <script setup>
-import iconFb from "@/assets/images/icons/fb.svg";
-import iconTwi from "@/assets/images/icons/twi.svg";
-import iconIg from "@/assets/images/icons/ig.svg";
-import iconIn from "@/assets/images/icons/in.svg";
+import iconFb from "/images/icons/fb.svg";
+import iconTwi from "/images/icons/twi.svg";
+import iconIg from "/images/icons/ig.svg";
+import iconIn from "/images/icons/in.svg";
 import { RouterLink } from "vue-router";
 
 const content = {

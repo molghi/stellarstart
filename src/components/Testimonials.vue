@@ -3,7 +3,7 @@ import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay } from "swiper/modules";
 
-import image from "@/assets/images/content/avatar.jpg";
+import image from "/images/content/avatar.jpg";
 const content = {
     title: "What our clients say about us",
     subtitle: "Real feedback from the people we’ve had the privilege to work with",
