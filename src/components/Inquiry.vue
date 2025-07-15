@@ -2,10 +2,10 @@
 const content = {
     title: "Building stellar websites for early startups",
     subtitle:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim.",
+        "We specialize in crafting high-performance websites tailored to the needs of ambitious startups. Our solutions are fast, scalable, and designed to make an immediate impact.",
     title2: "Send Inquiry",
     subtitle2:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim.",
+        " Let’s bring your vision to life. Share your project details, and we’ll get back to you with a tailored proposal.",
     fields: [
         { placeholder: "Your Name", type: "text" },
         { placeholder: "Email", type: "email" },
@@ -47,6 +47,7 @@ const content = {
 <style scoped>
 .inquiry {
     margin-bottom: 100px;
+    color: #fff;
 }
 
 .inquiry__wrapper {
@@ -124,6 +125,10 @@ const content = {
 
 .inquiry__contact {
     display: inline-block;
+    padding-right: 40px;
+}
+
+.inquiry .button--arrow {
     padding-right: 40px;
 }
 

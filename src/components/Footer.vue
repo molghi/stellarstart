@@ -3,6 +3,7 @@ import iconFb from "@/assets/images/icons/fb.svg";
 import iconTwi from "@/assets/images/icons/twi.svg";
 import iconIg from "@/assets/images/icons/ig.svg";
 import iconIn from "@/assets/images/icons/in.svg";
+import { RouterLink } from "vue-router";
 
 const content = {
     title: "StellarStart",
@@ -22,12 +23,13 @@ const content = {
         { name: "Call us", contact: "0927 6277 28525", type: "phone" },
     ],
     bottomLinks: [
-        { title: "Home", path: "#" },
-        { title: "About us", path: "#" },
-        { title: "Features", path: "#" },
-        { title: "Pricing", path: "#" },
-        { title: "FAQ", path: "#" },
-        { title: "Blog", path: "#" },
+        { title: "Home", path: "/" },
+        { title: "About us", path: "/about" },
+        { title: "Portfolio", path: "/portfolio" },
+        { title: "Features", path: "/features" },
+        { title: "Pricing", path: "/pricing" },
+        { title: "FAQ", path: "/faq" },
+        { title: "Blog", path: "/blog" },
     ],
 };
 </script>
@@ -78,7 +80,7 @@ const content = {
                     <div class="footer__menu">
                         <ul class="footer__list">
                             <li v-for="(item, index) in content.bottomLinks" :key="index" class="footer__list-item">
-                                <a :href="item.path" class="footer__link">{{ item.title }}</a>
+                                <RouterLink :to="item.path" class="footer__link">{{ item.title }}</RouterLink>
                             </li>
                         </ul>
                     </div>

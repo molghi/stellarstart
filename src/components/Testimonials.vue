@@ -1,15 +1,19 @@
 <script setup>
+import "swiper/css";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Autoplay } from "swiper/modules";
+
 import image from "@/assets/images/content/avatar.jpg";
 const content = {
     title: "What our clients say about us",
     subtitle: "Real feedback from the people we’ve had the privilege to work with",
     slides: [
-        // {
-        //     text: "All good, I'm good, you're good, we're all gooood! What a wonderful day!",
-        //     person: "Willie Jenson",
-        //     position: "Chief Of Staff",
-        //     image: image,
-        // },
+        {
+            text: "Highly competent and client-friendly people! It was a pleasure to work with them!",
+            person: "Willie Jenson",
+            position: "Chief Of Staff",
+            image: image,
+        },
         {
             text: "The best agency we’ve worked with so far. They understand our product and are able to add new features with a great focus.",
             person: "Jenny Wilson",
@@ -21,30 +25,39 @@ const content = {
 </script>
 
 <template>
-    <section class="testimonials">
+    <section v-if="content.slides && content.slides.length > 0" class="testimonials">
         <div class="container">
             <div class="testimonials__wrapper">
                 <div class="testimonials__body">
                     <div class="testimonials__title">{{ content.title }}</div>
                     <div class="testimonials__text">{{ content.subtitle }}</div>
                 </div>
-                <div
-                    class="testimonials__slider swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-autoheight swiper-backface-hidden"
-                >
-                    <div v-for="(item, index) in content.slides" :key="index" class="testimonials__slide">
-                        <div class="testimonials__slide-text">
-                            {{ item.text }}
-                        </div>
-                        <div class="testimonials__slide-author">
-                            <div class="testimonials__slide-avatar">
-                                <img :src="item.image" alt="person avatar" />
+                <div class="testimonials__slider">
+                    <!-- swiper slider -->
+                    <Swiper
+                        :modules="[Autoplay]"
+                        :autoplay="{ delay: 3000, disableOnInteraction: false }"
+                        :spaceBetween="20"
+                        :slidesPerView="1"
+                        :loop="true"
+                    >
+                        <SwiperSlide v-for="(item, index) in content.slides" :key="index">
+                            <div class="testimonials__slide">
+                                <div class="testimonials__slide-text">
+                                    {{ item.text }}
+                                </div>
+                                <div class="testimonials__slide-author">
+                                    <div class="testimonials__slide-avatar">
+                                        <img :src="item.image" alt="person avatar" />
+                                    </div>
+                                    <div class="testimonials__slide-info">
+                                        <div class="testimonials__slide-name">{{ item.person }}</div>
+                                        <div class="testimonials__slide-position">{{ item.position }}</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="testimonials__slide-info">
-                                <div class="testimonials__slide-name">{{ item.person }}</div>
-                                <div class="testimonials__slide-position">{{ item.position }}</div>
-                            </div>
-                        </div>
-                    </div>
+                        </SwiperSlide>
+                    </Swiper>
                 </div>
             </div>
         </div>

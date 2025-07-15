@@ -49,7 +49,7 @@ const toggleFaqItem = (index) => (activeIndex.value = activeIndex.value === inde
                                 <img src="@/assets/images/icons/plus.svg" alt="plus icon" />
                             </button>
                         </div>
-                        <div class="faq__item-content" v-show="activeIndex === index">
+                        <div :class="`faq__item-content ${activeIndex === index ? 'active' : ''}`" v-if="activeIndex === index">
                             {{ item.answer }}
                         </div>
                     </div>
@@ -144,6 +144,12 @@ const toggleFaqItem = (index) => (activeIndex.value = activeIndex.value === inde
     font-size: 18px;
     line-height: 32px;
     color: rgba(40, 41, 56, 0.87);
+    height: 0;
+    transition: all 0.3s;
+}
+
+.faq__item-content.active {
+    height: auto;
 }
 
 /* RESPONSIVE DESIGN */

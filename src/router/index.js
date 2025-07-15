@@ -24,6 +24,10 @@ const router = createRouter({
         { path: "/portfolio", name: "portfolio", component: PortfolioView },
         { path: "/portfolio/:slug", name: "project", component: ProjectView },
     ],
+    // Scroll to top upon mounting
+    scrollBehavior(to, from, savedPosition) {
+        return { top: 0 };
+    },
 });
 
 export default router;

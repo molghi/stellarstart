@@ -4,8 +4,17 @@ import img1 from "@/assets/images/content/work-1.jpg";
 import img2 from "@/assets/images/content/work-2.jpg";
 import img3 from "@/assets/images/content/work-3.jpg";
 import img4 from "@/assets/images/content/work-4.jpg";
+
+import { ref } from "vue";
+const activeTab = ref("all");
+
 const content = {
-    tabs: [{ title: "All" }, { title: "UI Design" }, { title: "Webflow Design" }, { title: "Figma Design" }],
+    tabs: [
+        { title: "All", category: "all" },
+        { title: "UI Design", category: "ui" },
+        { title: "Webflow Design", category: "webflow" },
+        { title: "Figma Design", category: "figma" },
+    ],
     items: [
         {
             image: img1,
@@ -13,6 +22,7 @@ const content = {
             text: `Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.`,
             buttonText: "View Project",
             link: "Template 1".toLowerCase().trim().replaceAll(" ", "-"),
+            category: "ui",
         },
         {
             image: img2,
@@ -20,6 +30,7 @@ const content = {
             text: `Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.`,
             buttonText: "View Project",
             link: "Template 2".toLowerCase().trim().replaceAll(" ", "-"),
+            category: "webflow",
         },
         {
             image: img3,
@@ -27,6 +38,7 @@ const content = {
             text: `Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.`,
             buttonText: "View Project",
             link: "Template 3".toLowerCase().trim().replaceAll(" ", "-"),
+            category: "ui",
         },
         {
             image: img4,
@@ -34,6 +46,7 @@ const content = {
             text: `Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.`,
             buttonText: "View Project",
             link: "Template 4".toLowerCase().trim().replaceAll(" ", "-"),
+            category: "figma",
         },
     ],
 };
@@ -43,32 +56,40 @@ const content = {
     <section class="work-tabs">
         <div class="container">
             <div class="work-tabs__wrapper">
+                <!-- tab category filter widget -->
+                <!-- tab triggers -->
                 <div class="work-tabs__triggers">
                     <button
-                        v-for="(item, index) in content.tabs"
+                        v-for="(btn, index) in content.tabs"
                         :key="index"
                         type="button"
-                        :class="`work-tabs__trigger ${index === 0 ? 'work-tabs__trigger--active' : ''}`"
+                        :class="`work-tabs__trigger ${btn.category === activeTab ? 'work-tabs__trigger--active' : ''}`"
+                        @click="activeTab = btn.category"
                     >
-                        {{ item.title }}
+                        {{ btn.title }}
                     </button>
                 </div>
 
+                <!-- tab cards -->
                 <div class="work-tabs__cards">
-                    <div v-for="(item, index) in content.items" :key="index" class="work-tabs__card">
-                        <RouterLink :to="`portfolio/${item.link}`" class="work-tabs__card-pic">
-                            <img :src="item.image" alt="project image" />
-                        </RouterLink>
-                        <div class="work-tabs__card-body">
-                            <RouterLink :to="`portfolio/${item.link}`" class="work-tabs__card-title">{{ item.title }}</RouterLink>
-                            <div class="work-tabs__card-text">
-                                {{ item.text }}
+                    <template v-for="(item, index) in content.items" :key="index">
+                        <div v-if="activeTab === 'all' || activeTab === item.category" class="work-tabs__card">
+                            <RouterLink :to="`portfolio/${item.link}`" class="work-tabs__card-pic">
+                                <img :src="item.image" alt="project image" />
+                            </RouterLink>
+                            <div class="work-tabs__card-body">
+                                <RouterLink :to="`portfolio/${item.link}`" class="work-tabs__card-title">{{
+                                    item.title
+                                }}</RouterLink>
+                                <div class="work-tabs__card-text">
+                                    {{ item.text }}
+                                </div>
+                                <RouterLink :to="`portfolio/${item.link}`" class="work-tabs__card-button">{{
+                                    item.buttonText
+                                }}</RouterLink>
                             </div>
-                            <RouterLink :to="`portfolio/${item.link}`" class="work-tabs__card-button">{{
-                                item.buttonText
-                            }}</RouterLink>
                         </div>
-                    </div>
+                    </template>
                 </div>
             </div>
         </div>
@@ -95,6 +116,7 @@ const content = {
     font-size: 18px;
     color: rgba(40, 41, 56, 0.7);
     cursor: pointer;
+    transition: all 0.3s;
 }
 
 .work-tabs__trigger + .work-tabs__trigger {
@@ -106,7 +128,8 @@ const content = {
 }
 
 .work-tabs__trigger--active {
-    color: #006994;
+    /* color: #006994;*/
+    color: #0062ff;
 }
 
 .work-tabs__trigger--active:hover {
