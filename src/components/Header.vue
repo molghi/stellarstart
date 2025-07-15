@@ -10,13 +10,14 @@ const siteName = "StellarStart";
 const menu = [
     { title: "Home", path: "/" },
     { title: "About us", path: "/about" },
+    { title: "Portfolio", path: "/portfolio" },
     { title: "Features", path: "/features" },
     { title: "Pricing", path: "/pricing" },
     { title: "FAQ", path: "/faq" },
     { title: "Blog", path: "/blog" },
 ];
 
-const button = { title: "Contact us", path: "#" };
+const button = { title: "Contact us", path: "/contact" };
 
 const isMenuActive = ref(false);
 const isHamburgerActive = ref(false);
@@ -24,6 +25,7 @@ const isHamburgerActive = ref(false);
 const toggleHamburger = () => {
     isMenuActive.value = !isMenuActive.value;
     isHamburgerActive.value = !isHamburgerActive.value;
+    document.body.classList.toggle("lock"); // no scroll
 };
 
 // highlight active link
@@ -38,6 +40,7 @@ const handleClickOutside = () => {
         // hide hamburger menu
         isMenuActive.value = false;
         isHamburgerActive.value = false;
+        document.body.classList.remove("lock");
     }
 };
 
@@ -50,7 +53,7 @@ onBeforeUnmount(() => document.removeEventListener("click", handleClickOutside))
     <header ref="rootEl" class="header">
         <div class="container">
             <div class="header__wrapper">
-                <a href="#" class="header__logo logo"> {{ siteName }} </a>
+                <RouterLink to="/" class="header__logo logo"> {{ siteName }} </RouterLink>
                 <div class="header__box">
                     <nav :class="`header__menu ${isMenuActive ? 'active' : ''}`">
                         <ul class="header__list">
@@ -63,7 +66,7 @@ onBeforeUnmount(() => document.removeEventListener("click", handleClickOutside))
                                 >
                             </li>
                         </ul>
-                        <a :href="button.path" class="header__button">{{ button.title }}</a>
+                        <RouterLink :to="button.path" class="header__button">{{ button.title }}</RouterLink>
                     </nav>
                     <!-- Hamburger menu -->
                     <div @click="toggleHamburger" :class="`header__hamburger-menu ${isHamburgerActive ? 'active' : ''}`">
@@ -141,6 +144,12 @@ onBeforeUnmount(() => document.removeEventListener("click", handleClickOutside))
 }
 
 /* RESPONSIVE DESIGN */
+
+@media (max-width: 1292px) {
+    .header__list-item + .header__list-item {
+        margin-left: 20px;
+    }
+}
 
 @media (max-width: 992.98px) {
     .header__hamburger-menu {

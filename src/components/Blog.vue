@@ -1,46 +1,29 @@
 <script setup>
-import img1 from "@/assets/images/content/blog-1.jpg";
-import img2 from "@/assets/images/content/blog-2.jpg";
-import img3 from "@/assets/images/content/blog-3.jpg";
+import { defineProps } from "vue";
 
 const content = {
     title: "Our Blog",
-    cards: [
-        {
-            cardImg: img1,
-            cardDate: "Jan 19, 2022",
-            cardTitle: "How one Webflow user grew his single person consultancy from $0-100K in 14 months",
-            cardText: "See how pivoting to Webflow changed one person’s sales strategy and allowed him to attract",
-            cardBtnText: "Read More",
-            cardPath: "#",
-        },
-        {
-            cardImg: img2,
-            cardDate: "Apr 18, 2022",
-            cardTitle: "How one Webflow user grew his single person consultancy from $0-100K in 14 months",
-            cardText: "See how pivoting to Webflow changed one person’s sales strategy and allowed him to attract",
-            cardBtnText: "Read More",
-            cardPath: "#",
-        },
-        {
-            cardImg: img3,
-            cardDate: "Jul 14, 2025",
-            cardTitle: "How one Webflow user grew his single person consultancy from $0-100K in 14 months",
-            cardText: "See how pivoting to Webflow changed one person’s sales strategy and allowed him to attract",
-            cardBtnText: "Read More",
-            cardPath: "#",
-        },
-    ],
 };
+
+defineProps({
+    titleCentered: {
+        type: String,
+        default: "false",
+    },
+    blogsData: {
+        type: [Object, Array, null],
+        default: null,
+    },
+});
 </script>
 
 <template>
-    <section class="blog">
+    <section v-if="blogsData && blogsData.length > 0" class="blog">
         <div class="container">
             <div class="blog__wrapper">
-                <div class="blog__title">{{ content.title }}</div>
+                <div :class="`blog__title ${titleCentered === 'true' ? 'centered' : ''}`">{{ content.title }}</div>
                 <div class="blog__cards">
-                    <div v-for="(item, index) in content.cards" :key="index" class="blog__card">
+                    <div v-for="(item, index) in blogsData" :key="index" class="blog__card">
                         <a :href="item.cardPath" class="blog__card-pic">
                             <img :src="item.cardImg" alt="card image" />
                         </a>
@@ -75,10 +58,13 @@ const content = {
     display: flex;
     justify-content: space-between;
     column-gap: 32px;
+    row-gap: 32px;
+    flex-wrap: wrap;
 }
 
 .blog__card {
     max-width: 405px;
+    flex: 0 1 33.333%;
 }
 
 .blog__card-pic {
@@ -151,6 +137,10 @@ const content = {
     margin-left: 15px;
 }
 
+.centered {
+    text-align: center;
+}
+
 /* RESPONSIVE DESIGN */
 
 @media (max-width: 1292px) {
@@ -159,6 +149,9 @@ const content = {
     }
     .blog__card-text {
         font-size: 14px;
+    }
+    .blog__card {
+        flex: 0 1 31%;
     }
 }
 
@@ -173,6 +166,12 @@ const content = {
     }
     .blog--carousel {
         display: block;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .blog__card {
+        flex: 1 1 100%;
     }
 }
 

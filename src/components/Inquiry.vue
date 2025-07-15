@@ -46,7 +46,7 @@ const content = {
 
 <style scoped>
 .inquiry {
-    color: #fff;
+    margin-bottom: 100px;
 }
 
 .inquiry__wrapper {

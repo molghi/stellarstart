@@ -8,6 +8,8 @@ import featuresImg1 from "@/assets/images/content/features-1.jpg";
 import featuresImg2 from "@/assets/images/content/features-2.jpg";
 import featuresImg3 from "@/assets/images/content/features-3.jpg";
 import featuresImg4 from "@/assets/images/content/features-4.jpg";
+import { onMounted } from "vue";
+onMounted(() => (document.title = "Features | StellarStart"));
 </script>
 
 <template>
