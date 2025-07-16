@@ -178,7 +178,7 @@ const content = {
         line-height: 35px;
     }
     .testimonials__slider {
-        max-width: 300px;
+        /*max-width: 300px;*/
     }
     .testimonials__title {
         font-size: 30px;

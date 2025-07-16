@@ -34,13 +34,17 @@ const isActiveLink = (routePath) => {
     return route.path === routePath;
 };
 
+const hideHamburger = () => {
+    isMenuActive.value = false;
+    isHamburgerActive.value = false;
+    document.body.classList.remove("lock");
+};
+
 // check if the clicked element is not inside the component
 const handleClickOutside = () => {
     if (rootEl.value && !rootEl.value.contains(event.target)) {
         // hide hamburger menu
-        isMenuActive.value = false;
-        isHamburgerActive.value = false;
-        document.body.classList.remove("lock");
+        hideHamburger();
     }
 };
 
@@ -62,6 +66,7 @@ onBeforeUnmount(() => document.removeEventListener("click", handleClickOutside))
                                 <RouterLink
                                     :to="item.path"
                                     :class="`header__link ${isActiveLink(item.path) ? 'header__link--active' : ''}`"
+                                    @click="hideHamburger"
                                     >{{ item.title }}</RouterLink
                                 >
                             </li>
